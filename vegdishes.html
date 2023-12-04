@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .menu-item {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px 30px; /* Adjust padding for button size */
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 18px; /* Adjust font size for button text */
+        }
+        .selected {
+            background-color: #082b42; /* Blue color for selected items */
+            color: #fff;
+        }
+        #submit-button {
+            padding: 15px 30px; /* Adjust padding for button size */
+            font-size: 18px; /* Adjust font size for button text */
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        #home-button {
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: #3498db; /* Change the color as needed */
+            position: absolute;
+            top: 40px;
+            left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <button id="home-button" onclick="goToHomePage()">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </button>
+    <br>
+    <br>
+
+    <h1>VEGETARIAN DISHES</h1>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="menu-item" onclick="selectItem(this)">VEG-PIZZA</div>
+    <div class="menu-item" onclick="selectItem(this)">VEG-BURGER</div>
+    <div class="menu-item" onclick="selectItem(this)">VEG-PASTA</div>
+    <br>
+    <div class="menu-item" onclick="selectItem(this)">SALAD</div>
+    <div class="menu-item" onclick="selectItem(this)">SUSHI</div>
+    <div class="menu-item" onclick="selectItem(this)">SOUP</div>
+    <br>
+    <div class="menu-item" onclick="selectItem(this)">VEG-BIRIYANI</div>
+    <div class="menu-item" onclick="selectItem(this)">VEG-CUTLETE</div>
+    <div class="menu-item" onclick="selectItem(this)">FRIED-RICE</div>
+
+    <h2>SELECTED ITEMS:</h2>
+    <div id="selected-items"></div>
+
+    <button id="submit-button" onclick="submitSelection()">SUBMIT</button>
+
+    <script>
+        function selectItem(item) {
+            // Toggle the 'selected' class to visually indicate the selection
+            item.classList.toggle('selected');
+        }
+
+        function submitSelection() {
+            const selectedItems = document.querySelectorAll('.selected');
+            const selectedItemsContainer = document.getElementById('selected-items');
+
+            // Clear previous selection
+            selectedItemsContainer.innerHTML = '';
+
+            // Display the selected items
+            selectedItems.forEach(selectedItem => {
+                const itemName = selectedItem.textContent;
+                const selectedDiv = document.createElement('div');
+                selectedDiv.textContent = itemName;
+                selectedItemsContainer.appendChild(selectedDiv);
+            });
+
+            // For demonstration purposes, alert the selected items
+            alert('Selected Items: ' + Array.from(selectedItems).map(item => item.textContent).join(', '));
+
+            // Refresh the page after 3 seconds
+            setTimeout(function () {
+                location.reload();
+            }, 3000);
+        }
+
+        function goToHomePage() {
+            window.location.href = 'home.html';
+        }
+    </script>
+
+</body>
+</html>

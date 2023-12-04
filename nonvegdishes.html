@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .menu-item {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 15px 30px; /* Adjust padding for button size */
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+            font-size: 18px; /* Adjust font size for button text */
+        }
+        .selected {
+            background-color: #3498db; /* Blue color for selected items */
+            color: #fff;
+        }
+        #submit-button {
+            padding: 15px 30px; /* Adjust padding for button size */
+            font-size: 18px; /* Adjust font size for button text */
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>NON-VEGETARIAN DISHES</h1>
+
+    <div class="menu-item" onclick="selectItem(this)">CHICKEN-PIZZA</div>
+    <div class="menu-item" onclick="selectItem(this)">CHICKEN-BURGER</div>
+    <div class="menu-item" onclick="selectItem(this)">CHICKEN-PASTA</div>
+    <br>
+    <div class="menu-item" onclick="selectItem(this)">SALAD</div>
+    <div class="menu-item" onclick="selectItem(this)">SUSHI</div>
+    <div class="menu-item" onclick="selectItem(this)">BIRIYANI</div>
+    <br>
+    <div class="menu-item" onclick="selectItem(this)">SHAWARMA</div>
+    <div class="menu-item" onclick="selectItem(this)">BEEF-CUTLETE</div>
+    <div class="menu-item" onclick="selectItem(this)">CHICKEN-NOODLES</div>
+
+    <h2>Your Selection:</h2>
+    <div id="selected-items"></div>
+
+    <button id="submit-button" onclick="submitSelection()">SUBMIT</button>
+
+    <script>
+        function selectItem(item) {
+            // Toggle the 'selected' class to visually indicate the selection
+            item.classList.toggle('selected');
+        }
+
+        function submitSelection() {
+            const selectedItems = document.querySelectorAll('.selected');
+            const selectedItemsContainer = document.getElementById('selected-items');
+
+            // Clear previous selection
+            selectedItemsContainer.innerHTML = '';
+
+            // Display the selected items
+            selectedItems.forEach(selectedItem => {
+                const itemName = selectedItem.textContent;
+                const selectedDiv = document.createElement('div');
+                selectedDiv.textContent = itemName;
+                selectedItemsContainer.appendChild(selectedDiv);
+            });
+
+            // For demonstration purposes, alert the selected items
+            alert('Selected Items: ' + Array.from(selectedItems).map(item => item.textContent).join(', '));
+        }
+    </script>
+
+</body>
+</html>

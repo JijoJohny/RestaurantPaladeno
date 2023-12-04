@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.rameesreastaurant.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        #container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #button_container{
+            border: 2px solid #ccc;
+            display:inline-block;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #logo {
+            max-width: 100%;
+            height: 100%;
+            margin-bottom: 20px;
+        }
+        #footer{
+            margin-top: 50px;
+            background-color: #040101;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="container">
+    <img src="jalapeno.png" alt="RESTAURAUNT LOGO" id="logo">
+
+    <div id="button_container">
+    <h1>LOGIN</h1>
+
+    <button onclick="openCashierPage()">CASHIER LOGIN</button>
+    <br>
+    <button onclick="openChefPage()">CHEF LOGIN</button>
+    <br>
+    <button onclick="openCustomerPage()">CUSTOMER LOGIN</button>
+    </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    
+    <footer>
+        <p>&copy; 2023 JIJO JOHNY. All rights reserved.</p>
+    </footer>
+    <script>
+        function openCashierPage() {
+            window.location.href = 'cashierlogin.html';// Going to cashier login page
+            alert("Redirecting to Cashier Page");
+        }
+
+        function openChefPage() {
+            window.location.href ='cheflogin.html';// Going to chef login page
+            alert("Redirecting to Chef Page");
+        }
+
+        function openCustomerPage() {
+            window.location.href='customer_veg_nonveg.html';// Going to customer page
+            alert("Redirecting to Customer Page");
+        }
+    </script>
+
+</body>
+</html>

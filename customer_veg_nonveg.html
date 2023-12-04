@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Buttons with Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border: black;
+        }
+        #home-button {
+            text-align: left;
+            background: none;
+            border:none ;
+            cursor: pointer;
+            font-size: 18px;
+            color: #3498db; /* Change the color as needed */
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="home-button" onclick="goToHomePage()">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+    <img src="vegetarian.png" >
+    <img src="nonveg.png">
+    <br>
+    <button type="submit" onclick="submitForm1()">VEGETARIAN</button>
+    <button type="submit" onclick="submitForm2()">NON-VEGETARIAN</button>
+
+    <script>
+        function submitForm1() {
+            alert('VEG DISHES!');
+            window.location.href='vegdishes.html';
+        }
+
+        function submitForm2() {
+            alert('NON VEG DISHES!');
+            window.location.href='nonvegdishes.html';// Add your form submission logic for Form 2 here
+        }
+        function goToHomePage(){
+            window.location.href='home.html';
+        }
+    </script>
+
+</body>
+</html>

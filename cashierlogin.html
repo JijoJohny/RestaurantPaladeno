@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-mQDZdZoWDH8C+ccN6MbgdFj3KlsXXPXPt1IT3cljvM04NqQN/nAAsd3bQ81LxPrN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+            text-emphasis-color: white;
+        }
+        #login-form {
+            max-width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: gray;
+        }
+        #home-button {
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: #3498db; /* Change the color as needed */
+            position: absolute;
+            top: 40px;
+            left: 40px;
+        }
+    </style>
+</head>
+<body>
+    <button id="home-button" onclick="goToHomePage()">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="login-form">
+        <h2>CASHIER LOGIN</h2>
+        <form id="cashierLoginForm" onsubmit="submitLoginForm(event)">
+            <label for="username"></label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="password"></label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">LOGIN</button>
+        </form>
+
+    </div>
+
+    <script>
+        function submitLoginForm(event) {
+            event.preventDefault();
+
+            // Get values from the form
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Perform login logic here (you can add validation, etc.)
+            if (username === 'cashier_username' && password === 'cashier_password') {
+                alert('Login successful!');
+                // Redirect to another page or perform other actions after successful login
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        }
+
+        function goToHomePage() {
+            // Redirect to the home page
+            window.location.href = 'home.html'; // Replace 'home_page.html' with the actual URL of your home page
+        }
+    </script>
+
+</body>
+</html>
